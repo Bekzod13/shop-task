@@ -281,6 +281,8 @@ header{
 }
 .carusel-item{
   z-index: -2;
+  background-size: cover;
+  background-position: center;
 }
 .banner-title{
   width: 70%;

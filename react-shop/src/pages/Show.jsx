@@ -45,7 +45,7 @@ const Show = () => {
             <p>{product.description}</p>
         </div>
             <div className="show-details">
-                <h3>Price: ${product.discount === 0 ? 
+                <h3>Price: ${product.discount === null ? 
                 product.price: 
                 <>
                     <del>{product.price}</del> | ${product.discount}

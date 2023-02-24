@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 // import components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // import pages
 import Home from "./pages/Home";
@@ -23,6 +24,7 @@ function App() {
       <Route path="/signup" element={<Signup/>} />
       <Route path="/cart" element={<Cart/>} />
     </Routes>
+    <Footer/>
     </>
   )
 }

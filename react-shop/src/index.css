@@ -41,13 +41,15 @@ a{
   text-decoration: none;
 }
 /* navbar */
-nav{
+nav,
+footer{
   width: 100%;
   height: 60px;
   background: var(--main-bg);
   color: var(--white);
 }
-header{
+header,
+footer > div{
   display: flex;
   height: 100%;
   justify-content: space-between;
@@ -290,4 +292,61 @@ header{
   display: flex;
   font-weight: 600;
   color: var(--yellow);
+}
+
+/* cart */
+.cart{
+  display: flex;
+  min-height: calc(100vh - 270px);
+}
+.cart-box{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  margin-right: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+}
+.cart-box::-webkit-scrollbar{
+  width: 5px;
+  background: var(--gray);
+}
+.cart-box::-webkit-scrollbar-thumb{
+  border-radius: 4px;
+  background: var(--yellow);
+}
+.cart-details{
+  width: 350px;
+  padding: 20px;
+  background: var(--white);
+  height: min-content;
+  border-radius: 4px;
+}
+.cart-item{
+  width: 100%;
+  background: var(--white);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  padding: 20px;
+}
+.cart-img{
+  width: 200px;
+  height: 100%;
+}
+.cart-img img{
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+}
+.cart-item > .addToCartBtn{
+  margin-top: 0;
+}
+/* footer */
+footer{
+  margin-top: 50px;
 }

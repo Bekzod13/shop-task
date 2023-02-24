@@ -27,4 +27,10 @@ class CartController extends Controller
         ]);
         return response(['message' => 'succesfully']);
     }
+    public function delete($id){
+        Cart::find($id)->delete();
+        return response([
+            'message' => 'succesfully',
+        ]);
+    }
 }

@@ -29,7 +29,7 @@ const Carusel = ({banners}) => {
             banners.length === 0 ? 
             <div className='loading'>Loading ...</div>:
             banners.map( banner => (
-            <SwiperSlide key={banner.id} className="carusel-item" style={{backgroundImage: `url(http://localhost:8000/storage/${banner.image})`}} >
+            <SwiperSlide key={banner.id} className="carusel-item" style={{backgroundImage: `url(${banner.image})`}} >
                 <h1 className="banner-title">{banner.title}</h1>
             </SwiperSlide>
             ))

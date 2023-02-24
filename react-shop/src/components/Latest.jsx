@@ -2,14 +2,8 @@ import {useState, useEffect} from 'react';
 import api from '../api/Api';
 import {Link} from 'react-router-dom';
 
-const Latest = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(()=>{
-        api.get('/products')
-            .then(({data})=>{
-                setProducts(data.products.data)
-            })
-    }, [])
+const Latest = ({products}) => {
+
   return (
     <div className='container latest'>
       {

@@ -14,11 +14,19 @@ const Home = () => {
             });
     }, []);
 
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+        api.get('/products')
+            .then(({data})=>{
+                setProducts(data.products)
+            })
+    }, []);
+
   return (
     <>
         <Carusel banners={banners} />
         <Title title={'New Products'} />
-        <Latest/>
+        <Latest products={products}/>
     </>
   );
 }

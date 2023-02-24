@@ -17,4 +17,7 @@ class Product extends Model
         'count',
         'image',
     ];
+    public function sizes(){
+        return $this->hasMany(Size::class);
+    }
 }

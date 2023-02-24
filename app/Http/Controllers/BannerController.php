@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller
 {
@@ -24,7 +25,8 @@ class BannerController extends Controller
         }
         $banner = Banner::create([
             'title'=>$request->title,
-            'image'=>$image,
+            'image'=>'http://localhost:8000/storage/'.$image,
+            'url'=>$image,
         ]);
         if($banner){
             return response([
@@ -35,5 +37,11 @@ class BannerController extends Controller
                 'error'
             ]);
         }
+    }
+    public function destroy(Request $request){
+        $url = Banner::find($request->id)->url;
+        Storage::delete('/public/'.$url);
+        Banner::find($request->id)->delete();
+        return response(['success']);
     }
 }
